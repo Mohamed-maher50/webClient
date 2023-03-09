@@ -1,45 +1,26 @@
-// ( 0 )
-var obj = {
-  name: "Palestine",
-  cities: ["Nablus", "Ramallah", "Gaza"],
-  population: 4923178,
-  message: function () {
-    console.log("Arab country till the end");
-  },
-  has_arabs: false,
-};
+var x = "The Price of 1 egg is 7 EGP";
+var res = 0,
+  cas,
+  up = 0,
+  down = 0,
+  collect = "";
+for (let i = 0; i < x.length; i++) if (!isNaN(x[i])) res += +x[i];
+cas = res + x.length;
 
-// (1)
-console.log(obj);
-// (2)
-console.log(obj.cities);
-
-// (3)
-console.log(obj.cities[1]);
-// ( 4 )
-console.log(obj.cities[obj.cities.length - 1]);
-//or console.log(obj.cities.at(-1))
-
-// (5)
-obj.cities.push("Jerusalem"); // push method ( function ) will add Jerusalem in the end of array
-console.log(obj);
-
-//( 6 )
-obj.population += 150; // or obj.population = obj.population + 150;
-console.log(obj);
-// (7)
-obj.message();
-// (8)
-obj.name = obj.name.toUpperCase();
-// ( 9 )
-// if you have one statement(ممكن تقول سطر) // you can remove {} // note don't use it with function
-if (obj.has_arabs) console.log(obj.name + " has arabs");
-else console.log(obj.name + " has no arabs");
-// ( 10 )
-obj.longitude = "35° 13' 37.79 \" E"; // you can't use ( " ) between "" to use it put ( \ ) before it
-obj.latitude = "“31° 56' 50.46 \" N";
-// ( 11 )
-console.log(obj);
-// ( 13 )
-obj.has_arabs = !obj.has_arabs; // ! operator if value true will make it false if false will be false
-console.log([...obj]);
+for (let i = 0; i < x.length; i++)
+  if (x[i] == x[i].toUpperCase() && x[i] != " " && isNaN(x[i])) up++;
+// author answer
+// check ascii table
+// for (let i = 0; i < x.length; i++) {
+//   var c = x[i].charCodeAt();
+//   if (c > 59 && c < 91) up++;
+// }
+for (let i = 0; i < x.length; i++)
+  if (x[i] == x[i].toLowerCase() && x[i] != " " && isNaN(x[i])) down++;
+for (let i = 0; i < x.length; i++)
+  if (!isNaN(x[i]) && x[i] != " ") collect += x[i];
+console.log(res);
+console.log(cas);
+console.log(up);
+console.log(down);
+console.log(collect);
