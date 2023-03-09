@@ -1,16 +1,14 @@
-// second question
-var x = "In 2023 Goodness Comes After Suffering 7P";
-var con = "",
-  lword = "",
-  mid = "",
-  sec = "";
-con = x[0] + x[x.length - 1];
-// or con = x[0] + x.at(-1);
-for (let i = 0; i < x.length; i++) if (x[i] == " ") lword += x[i + 1];
-mid = x.split(" ");
-mid = mid[Math.floor(mid.length / 2)];
-sec = x.split(" ")[1];
-console.log(con);
-console.log(lword);
-console.log(mid);
-console.log(sec);
+// q 3
+var x = "A+ B+ C+ D+ F+";
+var rep = "",
+  slicer = "",
+  rev = "";
+for (let i = 0; i < x.length; i++) {
+  if (x[i] != "+") rep += x[i];
+  else rep += "-";
+}
+slicer = x.slice(3, 8);
+rev = x.split("").reverse().join("", ",");
+console.log(rep);
+console.log(slicer);
+console.log(rev);
